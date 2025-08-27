@@ -1,9 +1,11 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import './App.css'
 import AppLayout from './layouts/app-layout'
-import Categories from "./layouts/categories"
-import SearchPage from "./layouts/search"
-import Favorites from "./layouts/favorites"
+import Categories from "./page/categories"
+import SearchPage from "./page/search"
+import Favorites from "./page/favorites"
+import Home from "./page/home"
+import GifProvider from "./contex/gif-contex"
 
 const router = createBrowserRouter([
   {
@@ -38,7 +40,9 @@ function App() {
 
   return (
     <>
-
+      <GifProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </GifProvider>
     </>
   )
 }
