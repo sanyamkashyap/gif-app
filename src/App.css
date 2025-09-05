@@ -9,3 +9,25 @@
     @apply bg-gradient-to-r from-teal-600 via-blue-600 to-pink-600;
   }
 }
+
+.container {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tablet breakpoint (≤ 768px) */
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Mobile breakpoint (≤ 480px) */
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%; /* full width on mobile */
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}

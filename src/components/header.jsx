@@ -3,12 +3,13 @@ import { HiEllipsisVertical } from "react-icons/hi2"
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { GifContex } from '../contex/gif-contex';
+import Gifsearch from './gif-search';
 
 const Header = () => {
     const [categories, setCategories] = useState([]);
     const [showCategories, setShowCategories] = useState(false);
 
-    const { gf, filter, setFilter, favoirtes } = useContext(GifContex)
+    const { gf, favoirtes } = useContext(GifContex)
 
     const fetchGifCatogries = async () => {
         const { data } = await gf.categories();
@@ -63,7 +64,7 @@ const Header = () => {
                     </div>
                 }
             </div>
-            {/* search */}
+            <Gifsearch></Gifsearch>
         </nav>
     )
 }
